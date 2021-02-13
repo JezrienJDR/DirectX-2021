@@ -1,0 +1,12 @@
+﻿  Week7-2-TreeBillboardsApp.cpp
+C:\Users\Jesse\Desktop\Graphics2\RubinJessAsst2\RubinJessAsst2\myGeometry.h(175,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Desktop\Graphics2\RubinJessAsst2\RubinJessAsst2\myGeometry.h(179,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Desktop\Graphics2\RubinJessAsst2\RubinJessAsst2\myGeometry.h(810,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jesse\Desktop\Graphics2\RubinJessAsst2\RubinJessAsst2\myGeometry.h(957,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jesse\Desktop\Graphics2\RubinJessAsst2\RubinJessAsst2\myGeometry.h(990,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Desktop\Graphics2\RubinJessAsst2\RubinJessAsst2\myGeometry.h(991,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Desktop\Graphics2\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1081,29): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jesse\Desktop\Graphics2\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1095,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jesse\Desktop\Graphics2\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1203,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jesse\Desktop\Graphics2\RubinJessAsst2\RubinJessAsst2\Week7-2-TreeBillboardsApp.cpp(452,24): error C2039: 'get': is not a member of 'std::pair<const std::string,std::unique_ptr<Material,std::default_delete<Material>>>'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\unordered_map(85): message : see declaration of 'std::pair<const std::string,std::unique_ptr<Material,std::default_delete<Material>>>'
