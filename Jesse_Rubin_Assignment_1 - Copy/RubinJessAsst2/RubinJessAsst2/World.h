@@ -1,5 +1,6 @@
 #pragma once
 #include "Sprite.h"
+#include "Background.h"
 
 class World 
 {
@@ -25,8 +26,8 @@ private:
 	float scrollSpeed = 0.0f;
 
 	Sprite* player = nullptr;
-	Sprite* Background1 = nullptr;
-	Sprite* Background2 = nullptr;
+	Background* Background1 = nullptr;
+	Background* Background2 = nullptr;
 	Sprite* enemy = nullptr;
 
 };

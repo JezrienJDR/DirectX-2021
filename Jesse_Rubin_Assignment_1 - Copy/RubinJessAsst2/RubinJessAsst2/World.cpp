@@ -36,14 +36,14 @@ void World::BuildScene()
 	//player->SetVelocity(0.0f, 1.0f);
 	SceneGraph->AddChild(std::move(playerShip));
 
-	unique_ptr<Sprite> bg1(new Sprite(game, "space", 120.0f, 85.0f, true));
+	unique_ptr<Background> bg1(new Background(game, "space", 120.0f, 85.0f, true));
 	Background1 = bg1.get();
 	Background1->SetLocalPosition(0.0f, 0.0f, 0.0f);
 	Background1->SetLocalScale(1.0f, 1.0f, 1.0f);
 	Background1->SetVelocity(0.0f, -50.0f);
 	SceneGraph->AddChild(std::move(bg1));
 
-	unique_ptr<Sprite> bg2(new Sprite(game, "space", 120.0f, 85.0f, true));
+	unique_ptr<Background> bg2(new Background(game, "space", 120.0f, 85.0f, true));
 	Background2 = bg2.get();
 	Background2->SetWorldPosition(0.0f, 0.0f, 850.0f);
 	Background2->SetLocalScale(1.0f, 1.0f, 1.0f);
