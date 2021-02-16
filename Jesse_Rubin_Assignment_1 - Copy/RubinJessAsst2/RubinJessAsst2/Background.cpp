@@ -8,6 +8,11 @@ Background::Background(Game* game, string material, float width, float height, b
 
 void Background::UpdateSelf(const GameTimer& gt)
 {
+
+	SetWorldPosition(GetLocalPosition().x + GetParent()->GetWorldPosition().x,
+		GetLocalPosition().y + GetParent()->GetWorldPosition().y,
+		GetLocalPosition().z + GetParent()->GetWorldPosition().z);
+
 	velocity.x += acceleration.x * gt.DeltaTime();
 	velocity.y += acceleration.y * gt.DeltaTime();
 	
@@ -23,9 +28,9 @@ void Background::UpdateSelf(const GameTimer& gt)
 	Move(d.x, 0, d.y);
 	renderItem->NumFramesDirty++;
 
-	if (GetWorldPosition().z <= -850)
+	if (GetLocalPosition().z <= -850)
 	{
-		SetWorldPosition(0.0f, 0.0f, 850);
+		SetLocalPosition(0.0f, 0.0f, 850);
 	}
 
 }

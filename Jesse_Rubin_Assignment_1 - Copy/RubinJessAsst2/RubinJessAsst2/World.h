@@ -29,5 +29,7 @@ private:
 	Background* Background1 = nullptr;
 	Background* Background2 = nullptr;
 	Sprite* enemy = nullptr;
+	Sprite* planet1 = nullptr;
+	Sprite* planet2 = nullptr;
 
 };

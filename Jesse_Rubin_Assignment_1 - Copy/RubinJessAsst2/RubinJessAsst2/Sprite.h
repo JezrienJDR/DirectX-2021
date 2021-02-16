@@ -14,5 +14,6 @@ public:
 private:
     virtual void DrawSelf() const;
     virtual void BuildSelf();
+    virtual void UpdateSelf(const GameTimer& gt);
 
 };

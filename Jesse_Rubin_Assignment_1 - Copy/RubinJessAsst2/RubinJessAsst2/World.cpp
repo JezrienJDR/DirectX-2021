@@ -19,6 +19,14 @@ void World::Update(const GameTimer& gt)
 {
 
 	SceneGraph->Update(gt);
+
+	vec3 planetPos = vec3(planet1->GetLocalPosition().x, planet1->GetLocalPosition().y, planet1->GetLocalPosition().z );
+	planetPos = planetPos.Yrotate(gt.DeltaTime() * 100.0f);
+	planet1->SetLocalPosition(planetPos.x, planetPos.y, planetPos.z);
+
+	vec3 planetPos2 = vec3(planet2->GetLocalPosition().x, planet2->GetLocalPosition().y, planet2->GetLocalPosition().z);
+	planetPos2 = planetPos2.Yrotate(gt.DeltaTime() * 200.0f);
+	planet2->SetLocalPosition(planetPos2.x, planetPos2.y, planetPos2.z);
 }
 
 void World::Draw()
@@ -31,7 +39,7 @@ void World::BuildScene()
 {
 	unique_ptr<Sprite> playerShip(new Sprite(game, "Defiant", 8.1f, 10.0f, true));
 	player = playerShip.get();
-	player->SetLocalPosition(0.0f, 0.1f, 0.0f);
+	player->SetWorldPosition(0.0f, 0.1f, 0.0f);
 	player->SetLocalScale(1.0f, 1.0f, 1.0f);
 	//player->SetVelocity(0.0f, 1.0f);
 	SceneGraph->AddChild(std::move(playerShip));
@@ -45,17 +53,35 @@ void World::BuildScene()
 
 	unique_ptr<Background> bg2(new Background(game, "space", 120.0f, 85.0f, true));
 	Background2 = bg2.get();
-	Background2->SetWorldPosition(0.0f, 0.0f, 850.0f);
+	Background2->SetLocalPosition(0.0f, 0.0f, 850.0f);
 	Background2->SetLocalScale(1.0f, 1.0f, 1.0f);
 	Background2->SetVelocity(0.0f, -50.0f);
 	SceneGraph->AddChild(std::move(bg2));
 
 
-	unique_ptr<Sprite> e(new Sprite(game, "sun", 2.0f, 2.0f, true));
+	unique_ptr<Sprite> e(new Sprite(game, "sun", 20.0f, 20.0f, true));
 	enemy = e.get();
-	enemy->SetLocalPosition(-9.0f, 0.1f, 0.0f);
+	//enemy->SetWorldPosition(-250.0f, 0.05f, -200.0f);
+	enemy->SetLocalPosition(-250.0f, 0.05f, 350.0f);
 	enemy->SetLocalScale(1.0f, 1.0f, 1.0f);
+	enemy->SetVelocity(0.0f, -35.0f);
+
+	unique_ptr<Sprite> p1(new Sprite(game, "planet", 5.0f, 5.0f, true));
+	planet1 = p1.get();
+	planet1->SetLocalPosition(80.0f, -0.01f, 0.0f);
+	//planet1->SetLocalPosition(0.0f, 0.15f, 0.0f);
+	planet1->SetLocalScale(1.0f, 1.0f, 1.0f);
+
+	unique_ptr<Sprite> p2(new Sprite(game, "planet", 3.0f, 3.0f, true));
+	planet2 = p2.get();
+	planet2->SetLocalPosition(-120.0f, 0.15f, 0.0f);
+	//planet1->SetLocalPosition(0.0f, 0.15f, 0.0f);
+	planet2->SetLocalScale(1.0f, 1.0f, 1.0f);
+
+
 	SceneGraph->AddChild(std::move(e));
+	enemy->AddChild(std::move(p1));
+	enemy->AddChild(std::move(p2));
 
 	SceneGraph->Build();
 }

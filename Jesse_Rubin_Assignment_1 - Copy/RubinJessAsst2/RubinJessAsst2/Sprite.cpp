@@ -15,6 +15,24 @@ void Sprite::DrawSelf() const
 	renderItem->NumFramesDirty++;
 }
 
+void Sprite::UpdateSelf(const GameTimer& gt)
+{
+	SetWorldPosition(GetLocalPosition().x + GetParent()->GetWorldPosition().x,
+		GetLocalPosition().y + GetParent()->GetWorldPosition().y,
+		GetLocalPosition().z + GetParent()->GetWorldPosition().z);
+
+	XMFLOAT2 d;
+	d.x = velocity.x * gt.DeltaTime();
+	d.y = velocity.y * gt.DeltaTime();
+
+	//Move(0, 0, -10);
+
+	renderItem->NumFramesDirty++;
+	Move(d.x, 0, d.y);
+	renderItem->NumFramesDirty++;
+
+}
+
 void Sprite::BuildSelf()
 {
 	//XMStoreFloat4x4(&renderItem->World, XMMatrixScaling(width, 1.0f, height) * XMMatrixTranslation(GetLocalPosition().x, GetLocalPosition().y, GetLocalPosition().z));

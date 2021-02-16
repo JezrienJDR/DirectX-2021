@@ -142,9 +142,9 @@ XMFLOAT4X4 Node::GetLocalTransform() const
 
 void Node::Move(float x, float y, float z)
 {
-	worldPosition.x += x;
-	worldPosition.y += y;
-	worldPosition.z += z;
+	localPosition.x += x;
+	localPosition.y += y;
+	localPosition.z += z;
 
 	renderItem->NumFramesDirty++;
 }

@@ -101,8 +101,9 @@ public:
 
 	Node* GetParent();
 
-private:
 	virtual void UpdateSelf(const GameTimer& gt);
+
+private:
 	void UpdateChildren(const GameTimer& gt);
 
 	virtual void DrawSelf() const;
