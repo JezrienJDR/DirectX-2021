@@ -37,7 +37,7 @@ void World::Draw()
 
 void World::BuildScene()
 {
-	unique_ptr<Sprite> playerShip(new Sprite(game, "Defiant", 8.1f, 10.0f, true));
+	unique_ptr<Ship> playerShip(new Ship(game, "Defiant", 8.1f, 10.0f, true));
 	player = playerShip.get();
 	player->SetWorldPosition(0.0f, 0.1f, 0.0f);
 	player->SetLocalScale(1.0f, 1.0f, 1.0f);
@@ -59,7 +59,7 @@ void World::BuildScene()
 	SceneGraph->AddChild(std::move(bg2));
 
 
-	unique_ptr<Sprite> e(new Sprite(game, "sun", 20.0f, 20.0f, true));
+	unique_ptr<Sun> e(new Sun(game, "sun", 20.0f, 20.0f, true));
 	enemy = e.get();
 	//enemy->SetWorldPosition(-250.0f, 0.05f, -200.0f);
 	enemy->SetLocalPosition(-250.0f, 0.05f, 350.0f);

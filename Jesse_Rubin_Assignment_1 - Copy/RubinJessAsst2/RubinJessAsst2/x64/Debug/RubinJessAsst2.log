@@ -1,4 +1,4 @@
-﻿  World.cpp
+﻿  Sun.cpp
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(181,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(185,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(521,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data

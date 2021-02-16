@@ -152,7 +152,9 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MathHelper.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Ship.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Sun.cpp" />
     <ClCompile Include="Waves.cpp" />
     <ClCompile Include="BigMessAgglomeration.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -174,7 +176,9 @@
     <ClInclude Include="MathHelper.h" />
     <ClInclude Include="myGeometry.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="Ship.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Sun.h" />
     <ClInclude Include="UploadBuffer.h" />
     <ClInclude Include="Waves.h" />
     <ClInclude Include="World.h" />

@@ -1,6 +1,8 @@
 #pragma once
 #include "Sprite.h"
 #include "Background.h"
+#include "Ship.h"
+#include "Sun.h"
 
 class World 
 {
@@ -25,10 +27,10 @@ private:
 	XMFLOAT2 spawnPosition = XMFLOAT2(0.0f, 0.0f);
 	float scrollSpeed = 0.0f;
 
-	Sprite* player = nullptr;
+	Ship* player = nullptr;
 	Background* Background1 = nullptr;
 	Background* Background2 = nullptr;
-	Sprite* enemy = nullptr;
+	Sun* enemy = nullptr;
 	Sprite* planet1 = nullptr;
 	Sprite* planet2 = nullptr;
 
