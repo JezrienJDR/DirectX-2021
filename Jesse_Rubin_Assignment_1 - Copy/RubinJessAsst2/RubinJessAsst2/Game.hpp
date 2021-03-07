@@ -2,6 +2,7 @@
 
 #include "d3dApp.h"
 #include "World.h"
+#include "Player.h"
 using namespace std;
 
 
@@ -30,6 +31,9 @@ public:
 
 	// Render items divided by PSO.
 	std::vector<RenderItem*> mRitemLayer[(int)RenderLayer::Count];
+	
+	// Commands
+	
 
 public:
 	vector<unique_ptr<RenderItem>>& getRenderItems()
@@ -48,6 +52,7 @@ public:
 	{
 		return mAllRitems.size();
 	}
+
 private:
 	virtual void OnResize()override;
 	virtual void Update(const GameTimer& gt)override;
@@ -80,6 +85,7 @@ private:
 	void BuildRenderItems();
 	void DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const std::vector<RenderItem*>& ritems);
 
+	void ProcessInput();
 
 	std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> GetStaticSamplers();
 
@@ -140,5 +146,5 @@ private:
 	XMVECTOR north = XMVectorSet(0.0f, 0.0f, 1.0f, 1.0f);
 
 
-	//sphereCollider colliders[8];
+	Player mPlayer;
 };

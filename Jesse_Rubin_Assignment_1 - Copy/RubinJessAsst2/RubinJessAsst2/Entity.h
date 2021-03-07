@@ -1,7 +1,6 @@
 #pragma once
 #include "Node.h"
 
-
 class Entity : public Node
 {
 public:

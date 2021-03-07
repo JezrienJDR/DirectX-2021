@@ -3,6 +3,7 @@
 #include "Background.h"
 #include "Ship.h"
 #include "Sun.h"
+#include "CommandQueue.h"
 
 class World 
 {
@@ -11,6 +12,8 @@ public:
 	void Update(const GameTimer& gt);
 	void Draw();
 	void BuildScene();
+
+	CommandQueue& GetCQ();
 private:
 	//enum Layer
 	//{
@@ -34,4 +37,8 @@ private:
 	Sprite* planet1 = nullptr;
 	Sprite* planet2 = nullptr;
 
+public:
+	Command moveLeft;
+	Command moveRight;
+	CommandQueue mCQ;
 };

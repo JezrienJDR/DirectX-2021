@@ -13,6 +13,7 @@ Node::Node(Game* game)
 	localScale = XMFLOAT3(1, 1, 1);
 	localRotation = XMFLOAT3(0, 0, 0);
 	
+	category = Category::None;
 
 }
 
@@ -61,6 +62,19 @@ void Node::Build()
 
 	BuildSelf();
 	BuildChildren();
+}
+
+void Node::OnCommand(const Command& comm, const GameTimer& gt)
+{
+	if (comm.category & category) 
+	{
+		comm.action(*this, gt);
+	}
+
+	for (ptr& child : children)
+	{
+		child->OnCommand(comm, gt);
+	}
 }
 
 XMFLOAT3 Node::GetWorldPosition() const

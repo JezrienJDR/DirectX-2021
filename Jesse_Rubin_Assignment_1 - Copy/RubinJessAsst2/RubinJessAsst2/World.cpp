@@ -15,8 +15,19 @@ World::World(Game* window)
 
 }
 
+CommandQueue& World::GetCQ() 
+{
+	return mCQ;
+}
+
 void World::Update(const GameTimer& gt)
 {
+
+	while (!mCQ.isEmpty())
+	{
+		std::cout << "Executing command";
+		SceneGraph->OnCommand(mCQ.Pop(), gt);
+	}
 
 	SceneGraph->Update(gt);
 
@@ -27,6 +38,20 @@ void World::Update(const GameTimer& gt)
 	vec3 planetPos2 = vec3(planet2->GetLocalPosition().x, planet2->GetLocalPosition().y, planet2->GetLocalPosition().z);
 	planetPos2 = planetPos2.Yrotate(gt.DeltaTime() * 200.0f);
 	planet2->SetLocalPosition(planetPos2.x, planetPos2.y, planetPos2.z);
+
+
+	//if (GetAsyncKeyState(0x41))
+	//{
+	//	//player->Move(-0.1f, 0.0f, 0.0f);
+	//	SceneGraph->OnCommand(moveLeft, gt);
+	//}
+	//else if (GetAsyncKeyState(0x44))
+	//{
+	//	//player->Move(0.1f, 0.0f, 0.0f);
+	//	SceneGraph->OnCommand(moveRight, gt);
+	//}
+
+
 }
 
 void World::Draw()
@@ -34,6 +59,18 @@ void World::Draw()
 
 	SceneGraph->Draw();
 }
+
+//void MoveLeft(Node& n, const GameTimer& gt)
+//{
+//	//n.Move(-10.0f * gt.DeltaTime, 0.0f, 0.0f);
+//	n.Move(-0.1f, 0.0f, 0.0f);
+//}
+
+//void MoveRight(Node& n, const GameTimer& gt)
+//{
+//	//n.Move(10.0f * gt.DeltaTime, 0.0f, 0.0f);
+//	n.Move(0.1f, 0.0f, 0.0f);
+//}
 
 void World::BuildScene()
 {
@@ -84,4 +121,13 @@ void World::BuildScene()
 	enemy->AddChild(std::move(p2));
 
 	SceneGraph->Build();
+
+	//moveLeft.action = &MoveLeft;
+	/*moveRight.action = &MoveRight;*/
+
+	moveLeft.category = Category::Player;
+	moveRight.category = Category::Player;
 }
+
+
+

@@ -112,10 +112,7 @@ public:
 	float height = 1;
 };
 
-class Player : public RenderItem
-{
 
-};
 
 class Scene : public RenderItem
 {

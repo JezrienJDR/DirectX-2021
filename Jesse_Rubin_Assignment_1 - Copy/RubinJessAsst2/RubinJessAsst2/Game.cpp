@@ -68,9 +68,10 @@ bool Game::Initialize()
 	XMMATRIX O = XMMatrixOrthographicLH(screenWidth, screenHeight, 0.5f, 100.0f);
 	//XMStoreFloat4x4(&mProj, O);
 
-
 	return true;
 }
+
+
 
 void Game::OnResize()
 {
@@ -89,6 +90,9 @@ void Game::Update(const GameTimer& gt)
 {
 	OnKeyboardInput(gt);
 	UpdateCamera(gt);
+
+	ProcessInput();
+
 	world.Update(gt);
 
 	// Cycle through the circular frame resource array.
@@ -110,7 +114,12 @@ void Game::Update(const GameTimer& gt)
 	UpdateMaterialCBs(gt);
 	UpdateMainPassCB(gt);
 	//UpdateWaves(gt);
+
+
+
 }
+
+
 
 void Game::Draw(const GameTimer& gt)
 {
@@ -1154,4 +1163,11 @@ void Game::DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const std::vector
 
 		cmdList->DrawIndexedInstanced(ri->IndexCount, 1, ri->StartIndexLocation, ri->BaseVertexLocation, 0);
 	}
+}
+
+void Game::ProcessInput()
+{
+	CommandQueue& cq = world.mCQ;//world.GetCQ();
+	mPlayer.HandleEvents(cq);
+	mPlayer.HandleRealtimeInput(cq);
 }

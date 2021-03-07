@@ -8,6 +8,8 @@
 #include "myGeometry.h"
 #include "Camera.h"
 #include "FrameResource.h"
+#include "Category.h"
+#include "Command.h"
 
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
@@ -44,7 +46,7 @@ public:
 	Material* Mat = nullptr;
 	MeshGeometry* Geo = nullptr;
 
-	
+
 	vector<RenderItem*> children;
 
 	// Primitive topology.
@@ -67,6 +69,7 @@ public:
 };
 
 class Game;
+class Command;
 
 class Node {
 public:
@@ -81,6 +84,8 @@ public:
 	void Update(const GameTimer& gt);
 	void Draw() const;
 	void Build();
+
+	void OnCommand(const Command& comm, const GameTimer& gt);
 
 	XMFLOAT3 GetWorldPosition() const;
 	void SetWorldPosition(float x, float y, float z);
@@ -114,6 +119,8 @@ private:
 public:
 	Game* game;
 	RenderItem* renderItem;
+
+	Category::Type category;
 
 private:
 	XMFLOAT3 worldPosition;

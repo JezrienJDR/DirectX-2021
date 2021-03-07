@@ -1,4 +1,4 @@
-﻿  Sun.cpp
+﻿  Player.cpp
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(181,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(185,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(521,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
@@ -17,4 +17,6 @@ C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\Rub
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1039,1): warning C4305: '*=': truncation from 'double' to 'float'
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1156,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1253,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(11,1): warning C4099: 'Command': type name first seen using 'class' now seen using 'struct'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(10): message : see declaration of 'Command'
   RubinJessAsst2.vcxproj -> C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\x64\Debug\RubinJessAsst2.exe

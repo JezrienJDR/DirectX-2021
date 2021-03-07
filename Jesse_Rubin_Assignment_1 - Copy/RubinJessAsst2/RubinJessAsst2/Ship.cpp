@@ -3,7 +3,7 @@
 Ship::Ship(Game* game, string material, float width, float height, bool AlphaTest)
 	: Sprite(game, material, width, height, AlphaTest)
 {
-
+	category = Category::Player;
 }
 
 
@@ -26,8 +26,13 @@ void Ship::UpdateSelf(const GameTimer& gt)
 	//Move(0, 0, -10);
 
 	renderItem->NumFramesDirty++;
-	Move(d.x, 0, d.y);
+	/*Move(d.x, 0, d.y);*/
 	renderItem->NumFramesDirty++;
 
 
+}
+
+void Ship::Fire(int t)
+{
+	Move(0.0f, 0.0f, 1.0f);
 }
