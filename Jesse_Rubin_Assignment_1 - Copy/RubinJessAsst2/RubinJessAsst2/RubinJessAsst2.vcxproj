@@ -154,6 +154,8 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MathHelper.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Phaser.cpp" />
+    <ClCompile Include="PhaserPool.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Ship.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -182,6 +184,8 @@
     <ClInclude Include="MathHelper.h" />
     <ClInclude Include="myGeometry.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="Phaser.h" />
+    <ClInclude Include="PhaserPool.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Ship.h" />
     <ClInclude Include="Sprite.h" />

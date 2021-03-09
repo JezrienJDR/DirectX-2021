@@ -1,7 +1,7 @@
 #include "Ship.h"
 
-Ship::Ship(Game* game, string material, float width, float height, bool AlphaTest)
-	: Sprite(game, material, width, height, AlphaTest)
+Ship::Ship(Game* game, string material, float width, float height, bool AlphaTest, PhaserPool* pp)
+	: Sprite(game, material, width, height, AlphaTest), phaserPool(pp)
 {
 	category = Category::Player;
 }
@@ -34,5 +34,7 @@ void Ship::UpdateSelf(const GameTimer& gt)
 
 void Ship::Fire(int t)
 {
-	Move(0.0f, 0.0f, 1.0f);
+	Move(0.0f, 0.0f, -1.0f);
+
+	phaserPool->Fire(GetWorldPosition().x, GetWorldPosition().z);
 }

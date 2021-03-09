@@ -8,7 +8,8 @@ namespace Category
 		Scene = 1 << 0,
 		Player = 1 << 1,
 		Ally = 1 << 2,
-		Enemy = 1 << 3
+		Enemy = 1 << 3,
+		Projectile = 1 << 4,
 
 	};
 

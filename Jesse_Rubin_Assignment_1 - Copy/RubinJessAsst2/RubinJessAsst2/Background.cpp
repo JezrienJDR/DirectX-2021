@@ -25,7 +25,7 @@ void Background::UpdateSelf(const GameTimer& gt)
 	//Move(0, 0, -10);
 
 	renderItem->NumFramesDirty++;
-	/*Move(d.x, 0, d.y);*/
+	Move(d.x, 0, d.y);
 	renderItem->NumFramesDirty++;
 
 	if (GetLocalPosition().z <= -850)

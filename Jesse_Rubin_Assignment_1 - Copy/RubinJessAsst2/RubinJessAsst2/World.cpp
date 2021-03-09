@@ -10,6 +10,7 @@ World::World(Game* window)
 	, worldBounds(0.f, 0.f, 600.0f, 200.0f)
 	, spawnPosition(0.f, 0.f)
 	, scrollSpeed(-0.f)
+	, phaserPool(game, SceneGraph)
 	//, Layers({new Node(game)})
 {
 
@@ -74,9 +75,9 @@ void World::Draw()
 
 void World::BuildScene()
 {
-	unique_ptr<Ship> playerShip(new Ship(game, "Defiant", 8.1f, 10.0f, true));
+	unique_ptr<Ship> playerShip(new Ship(game, "Defiant", 8.1f, 10.0f, true, &phaserPool));
 	player = playerShip.get();
-	player->SetWorldPosition(0.0f, 0.1f, 0.0f);
+	player->SetWorldPosition(0.0f, 1.1f, 0.0f);
 	player->SetLocalScale(1.0f, 1.0f, 1.0f);
 	//player->SetVelocity(0.0f, 1.0f);
 	SceneGraph->AddChild(std::move(playerShip));

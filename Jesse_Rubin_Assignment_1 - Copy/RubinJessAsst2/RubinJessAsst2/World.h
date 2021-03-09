@@ -4,6 +4,7 @@
 #include "Ship.h"
 #include "Sun.h"
 #include "CommandQueue.h"
+#include "PhaserPool.h"
 
 class World 
 {
@@ -36,6 +37,8 @@ private:
 	Sun* enemy = nullptr;
 	Sprite* planet1 = nullptr;
 	Sprite* planet2 = nullptr;
+
+	PhaserPool phaserPool;
 
 public:
 	Command moveLeft;

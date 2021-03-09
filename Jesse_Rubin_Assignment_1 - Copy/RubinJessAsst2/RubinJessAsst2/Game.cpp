@@ -460,12 +460,12 @@ void Game::LoadTextures()
 		mCommandList.Get(), fenceTex->Filename.c_str(),
 		fenceTex->Resource, fenceTex->UploadHeap));
 
-	auto frostTex = std::make_unique<Texture>();
-	frostTex->Name = "frostTex";
-	frostTex->Filename = L"../../Textures/frost.dds";
+	auto PhaserTex = std::make_unique<Texture>();
+	PhaserTex->Name = "PhaserTex";
+	PhaserTex->Filename = L"../../Textures/Phaser.dds";
 	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
-		mCommandList.Get(), frostTex->Filename.c_str(),
-		frostTex->Resource, frostTex->UploadHeap));
+		mCommandList.Get(), PhaserTex->Filename.c_str(),
+		PhaserTex->Resource, PhaserTex->UploadHeap));
 
 	auto sunTex = std::make_unique<Texture>();
 	sunTex->Name = "sunTex";
@@ -503,7 +503,7 @@ void Game::LoadTextures()
 	mTextures[planetTex->Name] = std::move(planetTex);
 	mTextures[waterTex->Name] = std::move(waterTex);
 	mTextures[fenceTex->Name] = std::move(fenceTex);
-	mTextures[frostTex->Name] = std::move(frostTex);
+	mTextures[PhaserTex->Name] = std::move(PhaserTex);
 	mTextures[sunTex->Name] = std::move(sunTex);
 	mTextures[DefiantTex->Name] = std::move(DefiantTex);
 	mTextures[spaceTex->Name] = std::move(spaceTex);
@@ -569,7 +569,7 @@ void Game::BuildDescriptorHeaps()
 	auto planetTex = mTextures["planetTex"]->Resource;
 	auto waterTex = mTextures["waterTex"]->Resource;
 	auto fenceTex = mTextures["fenceTex"]->Resource;
-	auto frostTex = mTextures["frostTex"]->Resource;
+	auto PhaserTex = mTextures["PhaserTex"]->Resource;
 	auto sunTex = mTextures["sunTex"]->Resource;
 	auto DefiantTex = mTextures["DefiantTex"]->Resource;
 	auto spaceTex = mTextures["spaceTex"]->Resource;
@@ -599,8 +599,8 @@ void Game::BuildDescriptorHeaps()
 	// next descriptor
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 
-	srvDesc.Format = frostTex->GetDesc().Format;
-	md3dDevice->CreateShaderResourceView(frostTex.Get(), &srvDesc, hDescriptor);
+	srvDesc.Format = PhaserTex->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(PhaserTex.Get(), &srvDesc, hDescriptor);
 
 	// next descriptor
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
@@ -1000,13 +1000,13 @@ void Game::BuildMaterials()
 	wirefence->FresnelR0 = XMFLOAT3(0.02f, 0.02f, 0.02f);
 	wirefence->Roughness = 0.25f;
 
-	auto frost = std::make_unique<Material>();
-	frost->Name = "frost";
-	frost->MatCBIndex = 3;
-	frost->DiffuseSrvHeapIndex = 3;
-	frost->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
-	frost->FresnelR0 = XMFLOAT3(0.02f, 0.02f, 0.02f);
-	frost->Roughness = 0.0f;
+	auto Phaser = std::make_unique<Material>();
+	Phaser->Name = "Phaser";
+	Phaser->MatCBIndex = 3;
+	Phaser->DiffuseSrvHeapIndex = 3;
+	Phaser->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	Phaser->FresnelR0 = XMFLOAT3(0.02f, 0.02f, 0.02f);
+	Phaser->Roughness = 0.0f;
 
 	auto sun = std::make_unique<Material>();
 	sun->Name = "sun";
@@ -1046,7 +1046,7 @@ void Game::BuildMaterials()
 	mMaterials["planet"] = std::move(planet);
 	mMaterials["water"] = std::move(water);
 	mMaterials["wirefence"] = std::move(wirefence);
-	mMaterials["frost"] = std::move(frost);
+	mMaterials["Phaser"] = std::move(Phaser);
 	mMaterials["sun"] = std::move(sun);
 	mMaterials["Defiant"] = std::move(Defiant);
 	mMaterials["space"] = std::move(space);

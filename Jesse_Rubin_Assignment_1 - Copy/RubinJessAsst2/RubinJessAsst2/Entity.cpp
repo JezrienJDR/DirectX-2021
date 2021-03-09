@@ -44,5 +44,5 @@ void Entity::UpdateSelf(const GameTimer& gt)
 	d.x = velocity.x * gt.DeltaTime();
 	d.y = velocity.y * gt.DeltaTime();
 
-	/*Move(d.x, 0, d.y);*/
+	Move(d.x, 0, d.y);
 }
