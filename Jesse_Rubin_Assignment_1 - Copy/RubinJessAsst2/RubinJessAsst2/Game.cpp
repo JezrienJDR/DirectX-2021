@@ -94,6 +94,8 @@ void Game::Update(const GameTimer& gt)
 	ProcessInput();
 
 	world.Update(gt);
+	activeState->ProcessInput();
+	activeState->Update(gt);
 
 	// Cycle through the circular frame resource array.
 	mCurrFrameResourceIndex = (mCurrFrameResourceIndex + 1) % gNumFrameResources;
@@ -155,7 +157,8 @@ void Game::Draw(const GameTimer& gt)
 	auto passCB = mCurrFrameResource->PassCB->Resource();
 	mCommandList->SetGraphicsRootConstantBufferView(2, passCB->GetGPUVirtualAddress());
 
-	world.Draw();
+	//world.Draw();
+	activeState->Draw();
 	DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::Opaque]);
 
 	mCommandList->SetPipelineState(mPSOs["alphaTested"].Get());
@@ -490,14 +493,35 @@ void Game::LoadTextures()
 
 
 
-	auto treeArrayTex = std::make_unique<Texture>();
-	treeArrayTex->Name = "treeArrayTex";
-	treeArrayTex->Filename = L"../../Textures/treeArray.dds";
+	auto TitleTex = std::make_unique<Texture>();
+	TitleTex->Name = "TitleTex";
+	TitleTex->Filename = L"../../Textures/Title.dds";
 	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
-		mCommandList.Get(), treeArrayTex->Filename.c_str(),
-		treeArrayTex->Resource, treeArrayTex->UploadHeap));
+		mCommandList.Get(), TitleTex->Filename.c_str(),
+		TitleTex->Resource, TitleTex->UploadHeap));
 
 
+	auto MenuTex = std::make_unique<Texture>();
+	MenuTex->Name = "MenuTex";
+	MenuTex->Filename = L"../../Textures/Menu.dds";
+	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+		mCommandList.Get(), MenuTex->Filename.c_str(),
+		MenuTex->Resource, MenuTex->UploadHeap));
+
+
+	auto PauseTex = std::make_unique<Texture>();
+	PauseTex->Name = "PauseTex";
+	PauseTex->Filename = L"../../Textures/Pause.dds";
+	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+		mCommandList.Get(), PauseTex->Filename.c_str(),
+		PauseTex->Resource, PauseTex->UploadHeap));
+
+	auto KeybindingTex = std::make_unique<Texture>();
+	KeybindingTex->Name = "KeybindingTex";
+	KeybindingTex->Filename = L"../../Textures/Keybinding.dds";
+	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+		mCommandList.Get(), KeybindingTex->Filename.c_str(),
+		KeybindingTex->Resource, KeybindingTex->UploadHeap));
 
 
 	mTextures[planetTex->Name] = std::move(planetTex);
@@ -507,7 +531,11 @@ void Game::LoadTextures()
 	mTextures[sunTex->Name] = std::move(sunTex);
 	mTextures[DefiantTex->Name] = std::move(DefiantTex);
 	mTextures[spaceTex->Name] = std::move(spaceTex);
-	mTextures[treeArrayTex->Name] = std::move(treeArrayTex);
+
+	mTextures[TitleTex->Name] = std::move(TitleTex);
+	mTextures[MenuTex->Name] = std::move(MenuTex);
+	mTextures[PauseTex->Name] = std::move(PauseTex);
+	mTextures[KeybindingTex->Name] = std::move(KeybindingTex);
 }
 
 void Game::BuildRootSignature()
@@ -556,7 +584,7 @@ void Game::BuildDescriptorHeaps()
 	// Create the SRV heap.
 	//
 	D3D12_DESCRIPTOR_HEAP_DESC srvHeapDesc = {};
-	srvHeapDesc.NumDescriptors = 8;
+	srvHeapDesc.NumDescriptors = 12;
 	srvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
 	srvHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
 	ThrowIfFailed(md3dDevice->CreateDescriptorHeap(&srvHeapDesc, IID_PPV_ARGS(&mSrvDescriptorHeap)));
@@ -573,7 +601,11 @@ void Game::BuildDescriptorHeaps()
 	auto sunTex = mTextures["sunTex"]->Resource;
 	auto DefiantTex = mTextures["DefiantTex"]->Resource;
 	auto spaceTex = mTextures["spaceTex"]->Resource;
-	auto treeArrayTex = mTextures["treeArrayTex"]->Resource;
+
+	auto TitleTex = mTextures["TitleTex"]->Resource;
+	auto MenuTex = mTextures["MenuTex"]->Resource;
+	auto PauseTex = mTextures["PauseTex"]->Resource;
+	auto KeybindingTex = mTextures["KeybindingTex"]->Resource;
 
 
 	D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
@@ -621,8 +653,36 @@ void Game::BuildDescriptorHeaps()
 	srvDesc.Format = spaceTex->GetDesc().Format;
 	md3dDevice->CreateShaderResourceView(spaceTex.Get(), &srvDesc, hDescriptor);
 
+
 	// next descriptor
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+
+	srvDesc.Format = TitleTex->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(spaceTex.Get(), &srvDesc, hDescriptor);
+
+
+	// next descriptor
+	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+
+	srvDesc.Format = MenuTex->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(spaceTex.Get(), &srvDesc, hDescriptor);
+
+
+	// next descriptor
+	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+
+	srvDesc.Format = PauseTex->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(spaceTex.Get(), &srvDesc, hDescriptor);
+
+
+	// next descriptor
+	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+
+	srvDesc.Format = KeybindingTex->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(spaceTex.Get(), &srvDesc, hDescriptor);
+
+	// next descriptor
+	/*hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 
 	auto desc = treeArrayTex->GetDesc();
 	srvDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2DARRAY;
@@ -631,7 +691,7 @@ void Game::BuildDescriptorHeaps()
 	srvDesc.Texture2DArray.MipLevels = -1;
 	srvDesc.Texture2DArray.FirstArraySlice = 0;
 	srvDesc.Texture2DArray.ArraySize = treeArrayTex->GetDesc().DepthOrArraySize;
-	md3dDevice->CreateShaderResourceView(treeArrayTex.Get(), &srvDesc, hDescriptor);
+	md3dDevice->CreateShaderResourceView(treeArrayTex.Get(), &srvDesc, hDescriptor);*/
 
 
 
@@ -1033,14 +1093,40 @@ void Game::BuildMaterials()
 	space->Roughness = 0.25f;
 
 
+	auto Title = std::make_unique<Material>();
+	Title->Name = "Title";
+	Title->MatCBIndex = 6;
+	Title->DiffuseSrvHeapIndex = 6;
+	Title->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	Title->FresnelR0 = XMFLOAT3(0.02f, 0.02f, 0.02f);
+	Title->Roughness = 0.25f;
 
-	auto treeSprites = std::make_unique<Material>();
-	treeSprites->Name = "treeSprites";
-	treeSprites->MatCBIndex = 7;
-	treeSprites->DiffuseSrvHeapIndex = 7;
-	treeSprites->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
-	treeSprites->FresnelR0 = XMFLOAT3(0.01f, 0.01f, 0.01f);
-	treeSprites->Roughness = 0.125f;
+	auto Menu = std::make_unique<Material>();
+	Menu->Name = "Menu";
+	Menu->MatCBIndex = 6;
+	Menu->DiffuseSrvHeapIndex = 6;
+	Menu->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	Menu->FresnelR0 = XMFLOAT3(0.02f, 0.02f, 0.02f);
+	Menu->Roughness = 0.25f;
+
+
+	auto Pause = std::make_unique<Material>();
+	Pause->Name = "Pause";
+	Pause->MatCBIndex = 6;
+	Pause->DiffuseSrvHeapIndex = 6;
+	Pause->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	Pause->FresnelR0 = XMFLOAT3(0.02f, 0.02f, 0.02f);
+	Pause->Roughness = 0.25f;
+
+
+	auto Keybinding = std::make_unique<Material>();
+	Keybinding->Name = "Keybinding";
+	Keybinding->MatCBIndex = 6;
+	Keybinding->DiffuseSrvHeapIndex = 6;
+	Keybinding->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	Keybinding->FresnelR0 = XMFLOAT3(0.02f, 0.02f, 0.02f);
+	Keybinding->Roughness = 0.25f;
+
 
 
 	mMaterials["planet"] = std::move(planet);
@@ -1050,7 +1136,12 @@ void Game::BuildMaterials()
 	mMaterials["sun"] = std::move(sun);
 	mMaterials["Defiant"] = std::move(Defiant);
 	mMaterials["space"] = std::move(space);
-	mMaterials["treeSprites"] = std::move(treeSprites);
+
+	mMaterials["Title"] = std::move(Title);
+	mMaterials["Menu"] = std::move(Menu);
+	mMaterials["Pause"] = std::move(Pause);
+	mMaterials["Keybinding"] = std::move(Keybinding);
+
 }
 
 void Game::BuildRenderItems()

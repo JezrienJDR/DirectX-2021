@@ -1,8 +1,10 @@
 #pragma once
 
 #include "d3dApp.h"
-#include "World.h"
-#include "Player.h"
+//#include "World.h"
+//#include "Player.h"
+#include "State.h"
+#include <list>
 using namespace std;
 
 
@@ -147,4 +149,8 @@ private:
 
 
 	Player mPlayer;
+
+	std::list<State> stateList;
+
+	State* activeState;
 };
