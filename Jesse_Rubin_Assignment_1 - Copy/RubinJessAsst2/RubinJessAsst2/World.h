@@ -14,6 +14,11 @@ public:
 	void Draw();
 	void BuildScene();
 
+	void BuildTitle();
+	void BuildMenu();
+	void BuildModes();
+	void BuildPause();
+
 	CommandQueue& GetCQ();
 private:
 	//enum Layer
@@ -37,6 +42,12 @@ private:
 	Sun* enemy = nullptr;
 	Sprite* planet1 = nullptr;
 	Sprite* planet2 = nullptr;
+
+	Sprite* title = nullptr;
+	Sprite* menu = nullptr;
+	Sprite* modeSelect = nullptr;
+	Sprite* pause = nullptr;
+
 
 	PhaserPool phaserPool;
 

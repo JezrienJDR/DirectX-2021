@@ -73,6 +73,8 @@ void World::Draw()
 //	n.Move(0.1f, 0.0f, 0.0f);
 //}
 
+
+
 void World::BuildScene()
 {
 	unique_ptr<Ship> playerShip(new Ship(game, "Defiant", 8.1f, 10.0f, true, &phaserPool));
@@ -128,6 +130,46 @@ void World::BuildScene()
 
 	moveLeft.category = Category::Player;
 	moveRight.category = Category::Player;
+}
+
+void World::BuildTitle()
+{
+	unique_ptr<Sprite> p1(new Sprite(game, "Title", 120.0f, 85.0f, true));
+	title = p1.get();
+	title->SetLocalPosition(0.0f, 0.0f, 0.0f);
+	title->SetLocalScale(1.0f, 1.0f, 1.0f);
+
+	SceneGraph->AddChild(std::move(p1));
+}
+
+void World::BuildMenu()
+{
+	unique_ptr<Sprite> p1(new Sprite(game, "Menu", 120.0f, 85.0f, true));
+	menu = p1.get();
+	menu->SetLocalPosition(0.0f, 0.0f, 0.0f); 
+	menu->SetLocalScale(1.0f, 1.0f, 1.0f);
+
+	SceneGraph->AddChild(std::move(p1));
+}
+
+void World::BuildModes()
+{
+	unique_ptr<Sprite> p1(new Sprite(game, "Keybindings", 120.0f, 85.0f, true));
+	modeSelect = p1.get();
+	modeSelect->SetLocalPosition(0.0f, 0.0f, 0.0f);
+	modeSelect->SetLocalScale(1.0f, 1.0f, 1.0f);
+
+	SceneGraph->AddChild(std::move(p1));
+}
+
+void World::BuildPause()
+{
+	unique_ptr<Sprite> p1(new Sprite(game, "Pause", 120.0f, 85.0f, true));
+	pause = p1.get();
+	pause->SetLocalPosition(0.0f, 1.0f, 0.0f);
+	pause->SetLocalScale(1.0f, 1.0f, 1.0f);
+
+	SceneGraph->AddChild(std::move(p1));
 }
 
 
