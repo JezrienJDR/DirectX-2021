@@ -1,6 +1,6 @@
 #include "Node.h"
 #include "Game.hpp"
-
+#include "State.h"
 
 Node::Node(Game* game)
 	: children(), parent(nullptr), game(game) //, renderItem(new RenderItem)
@@ -14,6 +14,8 @@ Node::Node(Game* game)
 	localRotation = XMFLOAT3(0, 0, 0);
 	
 	category = Category::None;
+
+	isRoot = false;
 
 }
 
@@ -160,12 +162,20 @@ void Node::Move(float x, float y, float z)
 	localPosition.y += y;
 	localPosition.z += z;
 
+	if(renderItem != nullptr)
 	renderItem->NumFramesDirty++;
 }
 
 Node* Node::GetParent()
 {
 	return parent;
+}
+
+void Node::ButtonPress(char k)
+{
+	// subclasses will define
+	state->ButtonPress(k);
+
 }
 
 void Node::UpdateSelf(const GameTimer& gt)

@@ -4,7 +4,7 @@
 //#include "World.h"
 //#include "Player.h"
 #include "State.h"
-#include <list>
+#include <Vector>
 using namespace std;
 
 
@@ -15,6 +15,15 @@ enum class RenderLayer : int
 	AlphaTested,
 	AlphaTestedTreeSprites,
 	Count
+};
+
+enum class States : int
+{
+	TITLE = 0,
+	MENU = 1,
+	KEYBIND = 2,
+	GAME = 3,
+	PAUSE = 4
 };
 
 class Game : public D3DApp
@@ -35,7 +44,19 @@ public:
 	std::vector<RenderItem*> mRitemLayer[(int)RenderLayer::Count];
 	
 	// Commands
+
+	void ChangeState(States s);
+	//void ChangeState(int s);
+
+	void Pause();
+	void UnPause();
+	void MainMenu();
+	void TitleScreen();
+	void StartGame();
+	void Keybind();
 	
+	void WASD();
+	void ArrowKeys();
 
 public:
 	vector<unique_ptr<RenderItem>>& getRenderItems()
@@ -89,9 +110,11 @@ private:
 
 	void ProcessInput();
 
+	void BuildStates();
+	void ReorderStates();
 	std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> GetStaticSamplers();
 
-	
+
 
 private:
 
@@ -137,7 +160,7 @@ private:
 	float planeMove = -20.0f;
 
 	Camera camera;
-	World world;
+	//World world;
 
 	XMVECTOR camPos = XMVectorSet(0.0f, 5.0f, 0.0f, 1.0f);
 	XMVECTOR target = XMVectorSet(0.0f, 0.0f, 0.0f, 1.0f);
@@ -150,7 +173,13 @@ private:
 
 	Player mPlayer;
 
-	std::list<State> stateList;
+	std::vector<State*> stateList;
 
 	State* activeState;
+	State* previousState;
+
+	States active;
+	States prev;
+
+	bool initializedStates;
 };

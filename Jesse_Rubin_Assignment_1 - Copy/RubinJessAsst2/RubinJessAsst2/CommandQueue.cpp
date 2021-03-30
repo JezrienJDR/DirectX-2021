@@ -25,3 +25,12 @@ bool CommandQueue::isEmpty() const
 		return false;
 	}
 }
+
+void CommandQueue::Clear()
+{
+	while (cq.size() > 0)
+	{
+		cq.pop();
+	}
+
+}

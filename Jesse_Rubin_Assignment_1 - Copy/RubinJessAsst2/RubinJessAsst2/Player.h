@@ -11,7 +11,8 @@ public:
 	void HandleRealtimeInput(CommandQueue& cq);
 
 	void Setup();
-	
+	void WASD();
+	void ArrowKeys();
 
 	enum input
 	{
@@ -20,6 +21,10 @@ public:
 		UP,
 		DOWN,
 		FIRE,
+		A,
+		B,
+		C,
+		ESCAPE,
 		ACTIONCOUNT
 	};
 

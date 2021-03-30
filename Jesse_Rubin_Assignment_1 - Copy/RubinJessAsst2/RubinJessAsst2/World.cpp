@@ -1,7 +1,9 @@
 #include "World.h"
+#include "State.h"
 
-World::World(Game* window)
-	: SceneGraph(new Node(game))
+World::World(Game* window, State* s)
+	//: SceneGraph(new Node(game))
+	: SceneGraph(new Sprite(game, "space", 0,0,true))
 	, game(window)
 	, player(nullptr)
 	, Background1(nullptr)
@@ -11,8 +13,15 @@ World::World(Game* window)
 	, spawnPosition(0.f, 0.f)
 	, scrollSpeed(-0.f)
 	, phaserPool(game, SceneGraph)
+	, isGameWorld(false)
+	, state(s)
 	//, Layers({new Node(game)})
 {
+	SceneGraph->isRoot = true;
+
+
+
+
 
 }
 
@@ -32,14 +41,16 @@ void World::Update(const GameTimer& gt)
 
 	SceneGraph->Update(gt);
 
-	vec3 planetPos = vec3(planet1->GetLocalPosition().x, planet1->GetLocalPosition().y, planet1->GetLocalPosition().z );
-	planetPos = planetPos.Yrotate(gt.DeltaTime() * 100.0f);
-	planet1->SetLocalPosition(planetPos.x, planetPos.y, planetPos.z);
+	if (isGameWorld)
+	{
+		vec3 planetPos = vec3(planet1->GetLocalPosition().x, planet1->GetLocalPosition().y, planet1->GetLocalPosition().z);
+		planetPos = planetPos.Yrotate(gt.DeltaTime() * 100.0f);
+		planet1->SetLocalPosition(planetPos.x, planetPos.y, planetPos.z);
 
-	vec3 planetPos2 = vec3(planet2->GetLocalPosition().x, planet2->GetLocalPosition().y, planet2->GetLocalPosition().z);
-	planetPos2 = planetPos2.Yrotate(gt.DeltaTime() * 200.0f);
-	planet2->SetLocalPosition(planetPos2.x, planetPos2.y, planetPos2.z);
-
+		vec3 planetPos2 = vec3(planet2->GetLocalPosition().x, planet2->GetLocalPosition().y, planet2->GetLocalPosition().z);
+		planetPos2 = planetPos2.Yrotate(gt.DeltaTime() * 200.0f);
+		planet2->SetLocalPosition(planetPos2.x, planetPos2.y, planetPos2.z);
+	}
 
 	//if (GetAsyncKeyState(0x41))
 	//{
@@ -77,26 +88,37 @@ void World::Draw()
 
 void World::BuildScene()
 {
+	unique_ptr<Sprite> newRoot(new Sprite(game, "space", 0, 0, true));
+	state->root = newRoot.get();
+	state->root->SetWorldPosition(0.0f, 0.0f, 0.0f);
+	state->root->SetLocalScale(0.0f, 0.0f, 0.0f);
+
+
+
 	unique_ptr<Ship> playerShip(new Ship(game, "Defiant", 8.1f, 10.0f, true, &phaserPool));
 	player = playerShip.get();
-	player->SetWorldPosition(0.0f, 1.1f, 0.0f);
+	//player->SetWorldPosition(0.0f, 1.1f, 0.0f);
 	player->SetLocalScale(1.0f, 1.0f, 1.0f);
 	//player->SetVelocity(0.0f, 1.0f);
-	SceneGraph->AddChild(std::move(playerShip));
+	state->root->AddChild(std::move(playerShip));
 
 	unique_ptr<Background> bg1(new Background(game, "space", 120.0f, 85.0f, true));
 	Background1 = bg1.get();
 	Background1->SetLocalPosition(0.0f, 0.0f, 0.0f);
 	Background1->SetLocalScale(1.0f, 1.0f, 1.0f);
 	Background1->SetVelocity(0.0f, -50.0f);
-	SceneGraph->AddChild(std::move(bg1));
+	Background1->category = Category::UI;
+	Background1->state = state;
+	
+	state->root->AddChild(std::move(bg1));
 
 	unique_ptr<Background> bg2(new Background(game, "space", 120.0f, 85.0f, true));
 	Background2 = bg2.get();
 	Background2->SetLocalPosition(0.0f, 0.0f, 850.0f);
 	Background2->SetLocalScale(1.0f, 1.0f, 1.0f);
 	Background2->SetVelocity(0.0f, -50.0f);
-	SceneGraph->AddChild(std::move(bg2));
+
+	state->root->AddChild(std::move(bg2));
 
 
 	unique_ptr<Sun> e(new Sun(game, "sun", 20.0f, 20.0f, true));
@@ -119,9 +141,11 @@ void World::BuildScene()
 	planet2->SetLocalScale(1.0f, 1.0f, 1.0f);
 
 
-	SceneGraph->AddChild(std::move(e));
+	state->root->AddChild(std::move(e));
 	enemy->AddChild(std::move(p1));
 	enemy->AddChild(std::move(p2));
+
+	SceneGraph->AddChild(std::move(newRoot));
 
 	SceneGraph->Build();
 
@@ -130,46 +154,104 @@ void World::BuildScene()
 
 	moveLeft.category = Category::Player;
 	moveRight.category = Category::Player;
+
+	isGameWorld = true;
 }
 
 void World::BuildTitle()
 {
+	unique_ptr<Sprite> newRoot(new Sprite(game, "space", 0, 0, true));
+	state->root = newRoot.get();
+	state->root->SetWorldPosition(0.0f, 0.0f, 0.0f);
+	state->root->SetLocalScale(0.0f, 0.0f, 0.0f);
+	//player->SetVelocity(0.0f, 1.0f);
+	//SceneGraph->AddChild(std::move(root));
+
+
+
 	unique_ptr<Sprite> p1(new Sprite(game, "Title", 120.0f, 85.0f, true));
 	title = p1.get();
-	title->SetLocalPosition(0.0f, 0.0f, 0.0f);
+	title->SetLocalPosition(0.0f, 1.0f, 0.0f);
 	title->SetLocalScale(1.0f, 1.0f, 1.0f);
+	title->category = Category::UI;
+	title->state = state;
 
-	SceneGraph->AddChild(std::move(p1));
+	state->root->AddChild(std::move(p1));
+	SceneGraph->AddChild(std::move(newRoot));
+
+
+
+	SceneGraph->Build();
+
 }
 
 void World::BuildMenu()
 {
+
+	unique_ptr<Sprite> newRoot(new Sprite(game, "space", 0, 0, true));
+	state->root = newRoot.get();
+	state->root->SetWorldPosition(0.0f, 0.0f, 0.0f);
+	state->root->SetLocalScale(0.0f, 0.0f, 0.0f);
+
 	unique_ptr<Sprite> p1(new Sprite(game, "Menu", 120.0f, 85.0f, true));
 	menu = p1.get();
 	menu->SetLocalPosition(0.0f, 0.0f, 0.0f); 
 	menu->SetLocalScale(1.0f, 1.0f, 1.0f);
+	menu->category = Category::UI;
+	menu->state = state;
 
-	SceneGraph->AddChild(std::move(p1));
+	state->root->AddChild(std::move(p1));
+	SceneGraph->AddChild(std::move(newRoot));
+
+	SceneGraph->Build();
+
 }
 
 void World::BuildModes()
 {
-	unique_ptr<Sprite> p1(new Sprite(game, "Keybindings", 120.0f, 85.0f, true));
-	modeSelect = p1.get();
-	modeSelect->SetLocalPosition(0.0f, 0.0f, 0.0f);
-	modeSelect->SetLocalScale(1.0f, 1.0f, 1.0f);
+	unique_ptr<Sprite> newRoot(new Sprite(game, "space", 0, 0, true));
+	state->root = newRoot.get();
+	state->root->SetWorldPosition(0.0f, 0.0f, 0.0f);
+	state->root->SetLocalScale(0.0f, 0.0f, 0.0f);
 
-	SceneGraph->AddChild(std::move(p1));
+	unique_ptr<Sprite> p1(new Sprite(game, "Keybinding", 120.0f, 85.0f, true));
+	modeSelect = p1.get();
+	modeSelect->SetLocalPosition(0.0f, 1.0f, 0.0f);
+	modeSelect->SetLocalScale(1.0f, 1.0f, 1.0f);
+	modeSelect->category = Category::UI;
+	modeSelect->state = state;
+
+	state->root->AddChild(std::move(p1));
+	SceneGraph->AddChild(std::move(newRoot));
+	
+	SceneGraph->Build();
+
 }
 
 void World::BuildPause()
 {
-	unique_ptr<Sprite> p1(new Sprite(game, "Pause", 120.0f, 85.0f, true));
-	pause = p1.get();
-	pause->SetLocalPosition(0.0f, 1.0f, 0.0f);
-	pause->SetLocalScale(1.0f, 1.0f, 1.0f);
+	unique_ptr<Sprite> newRoot(new Sprite(game, "space", 0, 0, true));
+	state->root = newRoot.get();
+	state->root->SetWorldPosition(0.0f, 0.0f, 0.0f);
+	state->root->SetLocalScale(0.0f, 0.0f, 0.0f);
 
-	SceneGraph->AddChild(std::move(p1));
+	unique_ptr<Sprite> p1(new Sprite(game, "Pause", 80.0f, 55.0f, true));
+	pause = p1.get();
+	pause->SetLocalPosition(0.0f, 0.5f, 0.0f);
+	pause->SetLocalScale(0.5f, 1.0f, 0.5f);
+	pause->category = Category::UI;
+	pause->state = state;
+
+	state->root->AddChild(std::move(p1));
+	SceneGraph->AddChild(std::move(newRoot));
+
+	SceneGraph->Build();
+
+}
+
+Node* World::GetSceneGraph()
+{
+	return SceneGraph;
 }
 
 

@@ -9,7 +9,7 @@
 class World 
 {
 public:
-	explicit World(Game* window);
+	explicit World(Game* window, State* s);
 	void Update(const GameTimer& gt);
 	void Draw();
 	void BuildScene();
@@ -18,6 +18,10 @@ public:
 	void BuildMenu();
 	void BuildModes();
 	void BuildPause();
+
+	Node* GetSceneGraph();
+	//Node* root;
+	//unique_ptr<Sprite> newRoot;
 
 	CommandQueue& GetCQ();
 private:
@@ -31,6 +35,7 @@ private:
 
 	Game* game;
 	Node* SceneGraph;
+	State* state;
 	//array<Node*, LayerCount> Layers;
 	XMFLOAT4 worldBounds = XMFLOAT4(0.0f, 0.0f, 600.0f, 1000.0f);
 	XMFLOAT2 spawnPosition = XMFLOAT2(0.0f, 0.0f);
@@ -55,4 +60,6 @@ public:
 	Command moveLeft;
 	Command moveRight;
 	CommandQueue mCQ;
+
+	bool isGameWorld;
 };

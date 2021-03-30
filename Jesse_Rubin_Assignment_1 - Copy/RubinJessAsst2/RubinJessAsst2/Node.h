@@ -10,6 +10,7 @@
 #include "FrameResource.h"
 #include "Category.h"
 #include "Command.h"
+//#include "State.h"
 
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
@@ -19,6 +20,7 @@ using namespace std;
 #pragma comment(lib, "d3dcompiler.lib")
 #pragma comment(lib, "D3D12.lib")
 
+class State;
 
 struct RenderItem
 {
@@ -66,6 +68,8 @@ public:
 
 	float width = 1;
 	float height = 1;
+
+
 };
 
 class Game;
@@ -106,7 +110,12 @@ public:
 
 	Node* GetParent();
 
+	virtual void ButtonPress(char k);
+
 	virtual void UpdateSelf(const GameTimer& gt);
+
+	State* state;
+	bool isRoot;
 
 private:
 	void UpdateChildren(const GameTimer& gt);

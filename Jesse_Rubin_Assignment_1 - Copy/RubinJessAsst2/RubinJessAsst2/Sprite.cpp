@@ -17,9 +17,12 @@ void Sprite::DrawSelf() const
 
 void Sprite::UpdateSelf(const GameTimer& gt)
 {
-	SetWorldPosition(GetLocalPosition().x + GetParent()->GetWorldPosition().x,
-		GetLocalPosition().y + GetParent()->GetWorldPosition().y,
-		GetLocalPosition().z + GetParent()->GetWorldPosition().z);
+	if (!isRoot)
+	{
+		SetWorldPosition(GetLocalPosition().x + GetParent()->GetWorldPosition().x,
+			GetLocalPosition().y + GetParent()->GetWorldPosition().y,
+			GetLocalPosition().z + GetParent()->GetWorldPosition().z);
+	}
 
 	XMFLOAT2 d;
 	d.x = velocity.x * gt.DeltaTime();

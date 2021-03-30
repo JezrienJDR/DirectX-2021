@@ -10,6 +10,7 @@ namespace Category
 		Ally = 1 << 2,
 		Enemy = 1 << 3,
 		Projectile = 1 << 4,
+		UI = 1 << 5
 
 	};
 

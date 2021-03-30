@@ -1,12 +1,18 @@
 #include "Game.hpp"
 
+#include "MenuState.h"
+#include "GameState.h"
+#include "TitleState.h"
+#include "PauseState.h"
+#include "KeybindState.h"
+
 //using namespace DirectX;
 
 const int gNumFrameResources = 3;
 
 Game::Game(HINSTANCE hInstance)
-	: D3DApp(hInstance),
-	world(this)
+	: D3DApp(hInstance)
+	//,	world(this)
 {
 
 }
@@ -43,6 +49,10 @@ bool Game::Initialize()
 	BuildBoxGeometry();
 	BuildTreeSpritesGeometry();
 	BuildMaterials();
+	
+	BuildStates();
+
+	
 	BuildRenderItems();
 	BuildFrameResources();
 	BuildPSOs();
@@ -68,10 +78,61 @@ bool Game::Initialize()
 	XMMATRIX O = XMMatrixOrthographicLH(screenWidth, screenHeight, 0.5f, 100.0f);
 	//XMStoreFloat4x4(&mProj, O);
 
+	ReorderStates();
+
 	return true;
 }
 
 
+void Game::BuildStates()
+{
+	State* menuState = new MenuState(this);
+	menuState->GetWorld()->BuildMenu();
+
+	State* titleState = new TitleState(this);
+	titleState->GetWorld()->BuildTitle();
+	
+	State* gameState = new GameState(this);
+	gameState->GetWorld()->BuildScene();
+
+	State* pauseState = new PauseState(this);
+	pauseState->GetWorld()->BuildPause();
+
+	State* keybindState = new KeybindState(this);
+	keybindState->GetWorld()->BuildModes();
+
+	stateList.push_back(titleState);
+	stateList.push_back(menuState);
+	stateList.push_back(keybindState);
+	stateList.push_back(gameState);
+	stateList.push_back(pauseState);
+
+
+}
+
+void Game::ReorderStates()
+{
+	for (int i = 0; i < 5; i++)
+	{
+		stateList[i]->Exit();
+	}
+
+	activeState = stateList[0];
+	active = States::TITLE;
+	prev = States::TITLE;
+	activeState->Enter();
+	previousState = nullptr;
+}
+
+void Game::WASD()
+{
+	stateList[(int)States::GAME]->GetPlayer()->WASD();
+}
+
+void Game::ArrowKeys()
+{
+	stateList[(int)States::GAME]->GetPlayer()->ArrowKeys();
+}
 
 void Game::OnResize()
 {
@@ -88,14 +149,26 @@ void Game::OnResize()
 
 void Game::Update(const GameTimer& gt)
 {
+	if (!initializedStates)
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			stateList[i]->Update(gt);
+		}
+		initializedStates = true;
+	}
+
+
 	OnKeyboardInput(gt);
 	UpdateCamera(gt);
 
 	ProcessInput();
 
-	world.Update(gt);
-	activeState->ProcessInput();
+	//world.Update(gt);
+	//activeState->ProcessInput();
 	activeState->Update(gt);
+	if(previousState != nullptr && prev != States::GAME)
+	previousState->Update(gt);
 
 	// Cycle through the circular frame resource array.
 	mCurrFrameResourceIndex = (mCurrFrameResourceIndex + 1) % gNumFrameResources;
@@ -159,6 +232,9 @@ void Game::Draw(const GameTimer& gt)
 
 	//world.Draw();
 	activeState->Draw();
+	if (previousState != nullptr)
+		previousState->Draw();
+
 	DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::Opaque]);
 
 	mCommandList->SetPipelineState(mPSOs["alphaTested"].Get());
@@ -658,28 +734,28 @@ void Game::BuildDescriptorHeaps()
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 
 	srvDesc.Format = TitleTex->GetDesc().Format;
-	md3dDevice->CreateShaderResourceView(spaceTex.Get(), &srvDesc, hDescriptor);
+	md3dDevice->CreateShaderResourceView(TitleTex.Get(), &srvDesc, hDescriptor);
 
 
 	// next descriptor
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 
 	srvDesc.Format = MenuTex->GetDesc().Format;
-	md3dDevice->CreateShaderResourceView(spaceTex.Get(), &srvDesc, hDescriptor);
+	md3dDevice->CreateShaderResourceView(MenuTex.Get(), &srvDesc, hDescriptor);
 
 
 	// next descriptor
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 
 	srvDesc.Format = PauseTex->GetDesc().Format;
-	md3dDevice->CreateShaderResourceView(spaceTex.Get(), &srvDesc, hDescriptor);
+	md3dDevice->CreateShaderResourceView(PauseTex.Get(), &srvDesc, hDescriptor);
 
 
 	// next descriptor
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 
 	srvDesc.Format = KeybindingTex->GetDesc().Format;
-	md3dDevice->CreateShaderResourceView(spaceTex.Get(), &srvDesc, hDescriptor);
+	md3dDevice->CreateShaderResourceView(KeybindingTex.Get(), &srvDesc, hDescriptor);
 
 	// next descriptor
 	/*hDescriptor.Offset(1, mCbvSrvDescriptorSize);
@@ -1095,16 +1171,16 @@ void Game::BuildMaterials()
 
 	auto Title = std::make_unique<Material>();
 	Title->Name = "Title";
-	Title->MatCBIndex = 6;
-	Title->DiffuseSrvHeapIndex = 6;
+	Title->MatCBIndex = 7;
+	Title->DiffuseSrvHeapIndex = 7;
 	Title->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	Title->FresnelR0 = XMFLOAT3(0.02f, 0.02f, 0.02f);
 	Title->Roughness = 0.25f;
 
 	auto Menu = std::make_unique<Material>();
 	Menu->Name = "Menu";
-	Menu->MatCBIndex = 6;
-	Menu->DiffuseSrvHeapIndex = 6;
+	Menu->MatCBIndex = 8;
+	Menu->DiffuseSrvHeapIndex = 8;
 	Menu->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	Menu->FresnelR0 = XMFLOAT3(0.02f, 0.02f, 0.02f);
 	Menu->Roughness = 0.25f;
@@ -1112,8 +1188,8 @@ void Game::BuildMaterials()
 
 	auto Pause = std::make_unique<Material>();
 	Pause->Name = "Pause";
-	Pause->MatCBIndex = 6;
-	Pause->DiffuseSrvHeapIndex = 6;
+	Pause->MatCBIndex = 9;
+	Pause->DiffuseSrvHeapIndex = 9;
 	Pause->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	Pause->FresnelR0 = XMFLOAT3(0.02f, 0.02f, 0.02f);
 	Pause->Roughness = 0.25f;
@@ -1121,8 +1197,8 @@ void Game::BuildMaterials()
 
 	auto Keybinding = std::make_unique<Material>();
 	Keybinding->Name = "Keybinding";
-	Keybinding->MatCBIndex = 6;
-	Keybinding->DiffuseSrvHeapIndex = 6;
+	Keybinding->MatCBIndex = 10;
+	Keybinding->DiffuseSrvHeapIndex = 10;
 	Keybinding->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	Keybinding->FresnelR0 = XMFLOAT3(0.02f, 0.02f, 0.02f);
 	Keybinding->Roughness = 0.25f;
@@ -1146,7 +1222,7 @@ void Game::BuildMaterials()
 
 void Game::BuildRenderItems()
 {
-	world.BuildScene();
+	//world.BuildScene();
 
 }
 
@@ -1258,7 +1334,59 @@ void Game::DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const std::vector
 
 void Game::ProcessInput()
 {
-	CommandQueue& cq = world.mCQ;//world.GetCQ();
-	mPlayer.HandleEvents(cq);
-	mPlayer.HandleRealtimeInput(cq);
+	//CommandQueue& cq = world.mCQ;//world.GetCQ();
+	CommandQueue& cq = activeState->GetWorld()->mCQ;
+	//mPlayer.HandleEvents(cq);
+	//mPlayer.HandleRealtimeInput(cq);
+	activeState->GetPlayer()->HandleEvents(cq);
+	activeState->GetPlayer()->HandleRealtimeInput(cq);
+}
+
+void Game::ChangeState(States s)
+{
+	prev = active;
+	active = s;
+
+	previousState = activeState;
+
+	activeState->Exit();
+
+	stateList[(int)s]->GetWorld()->mCQ.Clear();
+	activeState = stateList[(int)s];
+
+	activeState->Enter();
+}
+
+
+
+void Game::Pause()
+{
+	ChangeState(States::PAUSE);
+
+}
+
+void Game::UnPause()
+{
+	ChangeState(States::GAME);
+}
+
+void Game::MainMenu()
+{
+	ChangeState(States::MENU);
+	//ChangeState(1);
+}
+
+void Game::TitleScreen()
+{
+	ChangeState(States::TITLE);
+}
+
+void Game::StartGame()
+{
+	ChangeState(States::GAME);
+}
+
+void Game::Keybind()
+{
+	ChangeState(States::KEYBIND);
 }

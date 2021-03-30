@@ -14,8 +14,13 @@ private:
 	PhaserPool phaserPool;
 
 public:
+	GameState(Game* game);
 	Command moveLeft;
 	Command moveRight;
 	CommandQueue mCQ;
+
+	virtual void ButtonPress(char k);
+	virtual void Enter() override;
+	virtual void Exit() override;
 };
 

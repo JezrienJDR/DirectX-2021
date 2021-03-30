@@ -17,9 +17,53 @@ C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\Rub
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1039,1): warning C4305: '*=': truncation from 'double' to 'float'
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1156,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1253,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(72,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(76,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(10): message : see declaration of 'Command'
-C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Game.hpp(55,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Game.hpp(76,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  GameState.cpp
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(181,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(185,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(521,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(522,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(524,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(524,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(525,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(525,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(526,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(526,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(527,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(527,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(849,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(875,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1038,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1039,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1156,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1253,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(76,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(10): message : see declaration of 'Command'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Game.hpp(76,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  KeybindState.cpp
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(181,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(185,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(521,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(522,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(524,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(524,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(525,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(525,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(526,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(526,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(527,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(527,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(849,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(875,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1038,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1039,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1156,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1253,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(76,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(10): message : see declaration of 'Command'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Game.hpp(76,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   Main.cpp
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(181,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(185,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
@@ -39,9 +83,31 @@ C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\Rub
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1039,1): warning C4305: '*=': truncation from 'double' to 'float'
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1156,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1253,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(72,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(76,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(10): message : see declaration of 'Command'
-C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Game.hpp(55,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Game.hpp(76,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  MenuState.cpp
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(181,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(185,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(521,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(522,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(524,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(524,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(525,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(525,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(526,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(526,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(527,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(527,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(849,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(875,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1038,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1039,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1156,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1253,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(76,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(10): message : see declaration of 'Command'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Game.hpp(76,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   Node.cpp
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(181,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(185,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
@@ -61,9 +127,52 @@ C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\Rub
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1039,1): warning C4305: '*=': truncation from 'double' to 'float'
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1156,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1253,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(72,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(76,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(10): message : see declaration of 'Command'
-C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Game.hpp(55,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Game.hpp(76,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  PauseState.cpp
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(181,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(185,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(521,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(522,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(524,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(524,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(525,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(525,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(526,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(526,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(527,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(527,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(849,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(875,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1038,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1039,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1156,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1253,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(76,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(10): message : see declaration of 'Command'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Game.hpp(76,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Player.cpp
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(181,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(185,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(521,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(522,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(524,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(524,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(525,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(525,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(526,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(526,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(527,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(527,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(849,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(875,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1038,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1039,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1156,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1253,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(11,1): warning C4099: 'Command': type name first seen using 'class' now seen using 'struct'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(10): message : see declaration of 'Command'
   Sprite.cpp
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(181,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(185,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
@@ -83,9 +192,9 @@ C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\Rub
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1039,1): warning C4305: '*=': truncation from 'double' to 'float'
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1156,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1253,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(72,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(76,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(10): message : see declaration of 'Command'
-C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Game.hpp(55,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Game.hpp(76,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   State.cpp
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(181,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(185,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
@@ -105,7 +214,50 @@ C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\Rub
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1039,1): warning C4305: '*=': truncation from 'double' to 'float'
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1156,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1253,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(72,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(76,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(10): message : see declaration of 'Command'
+  TitleState.cpp
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(181,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(185,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(521,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(522,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(524,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(524,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(525,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(525,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(526,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(526,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(527,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(527,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(849,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(875,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1038,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1039,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1156,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1253,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(76,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(10): message : see declaration of 'Command'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Game.hpp(76,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  World.cpp
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(181,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(185,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(521,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(522,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(524,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(524,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(525,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(525,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(526,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(526,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(527,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(527,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(849,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(875,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1038,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1039,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1156,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\myGeometry.h(1253,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Node.h(76,14): warning C4099: 'Command': type name first seen using 'struct' now seen using 'class'
 C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\RubinJessAsst2\Command.h(10): message : see declaration of 'Command'
   Generating Code...
   RubinJessAsst2.vcxproj -> C:\Users\Jesse\Documents\GitHub\DirectX-2021\Jesse_Rubin_Assignment_1 - Copy\RubinJessAsst2\x64\Debug\RubinJessAsst2.exe

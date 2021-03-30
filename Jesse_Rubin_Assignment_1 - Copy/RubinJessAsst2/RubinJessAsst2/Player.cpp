@@ -34,10 +34,26 @@ struct ShipFire
 	}
 };
 
+struct ButtonPress
+{
+	char key;
+
+	ButtonPress(char k)
+		: key(k)
+	{}
+
+	void operator() (Node& n, const GameTimer& gt) const
+	{
+		Node& node = n;
+		node.ButtonPress(key);
+	}
+};
+
 Player::Player()
 {
 	Setup();
 }
+
 
 
 void Player::Setup()
@@ -47,6 +63,10 @@ void Player::Setup()
 	keyBindings[UP] = 'W';
 	keyBindings[DOWN] = 'S';
 	keyBindings[FIRE] = 0x20; // Spacebar
+	keyBindings[A] = 'A';
+	keyBindings[B] = 'B';
+	keyBindings[C] = 'C';
+	keyBindings[ESCAPE] = 0x1B;
 
 	actionBindings[LEFT].action = derivedAction<Ship>(ShipMover(-1.0f, 0.0f, 0.0f));
 	actionBindings[RIGHT].action = derivedAction<Ship>(ShipMover(1.0f, 0.0f, 0.0f));
@@ -54,20 +74,49 @@ void Player::Setup()
 	actionBindings[DOWN].action = derivedAction<Ship>(ShipMover(0.0f, 0.0f, -1.0f));
 
 	eventBindings[FIRE].action = derivedAction <Ship>(ShipFire(1));
+	eventBindings[A].action = derivedAction <Node>(ButtonPress('A'));
+	eventBindings[B].action = derivedAction <Node>(ButtonPress('B'));
+	eventBindings[C].action = derivedAction <Node>(ButtonPress('C'));
+	eventBindings[ESCAPE].action = derivedAction <Node>(ButtonPress(0x1B));
+
 
 	actionBindings[LEFT].category = Category::Player;
 	actionBindings[RIGHT].category = Category::Player;
 	actionBindings[UP].category = Category::Player;
 	actionBindings[DOWN].category = Category::Player;
-	eventBindings[FIRE].category = Category::Player;
 
+	eventBindings[FIRE].category = Category::Player;
+	eventBindings[A].category = Category::UI;
+	eventBindings[B].category = Category::UI;
+	eventBindings[C].category = Category::UI;
+	eventBindings[ESCAPE].category = Category::UI;
 
 	keyDown[LEFT] = false;
 	keyDown[RIGHT] = false;
 	keyDown[UP] = false;
 	keyDown[DOWN] = false;
 	keyDown[FIRE] = false;
+	keyDown[A] = false;
+	keyDown[B] = false;
+	keyDown[C] = false;
+	keyDown[ESCAPE] = false;
+	
+}
 
+void Player::WASD()
+{
+	keyBindings[LEFT] = 'A';
+	keyBindings[RIGHT] = 'D';
+	keyBindings[UP] = 'W';
+	keyBindings[DOWN] = 'S';
+}
+
+void Player::ArrowKeys()
+{
+	keyBindings[LEFT] = 0x25;
+	keyBindings[RIGHT] = 0x27;
+	keyBindings[UP] = 0x26;
+	keyBindings[DOWN] = 0x28;
 }
 
 void Player::HandleEvents(CommandQueue& cq)

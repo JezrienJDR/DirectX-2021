@@ -360,7 +360,7 @@ LRESULT D3DApp::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     case WM_KEYUP:
         if(wParam == VK_ESCAPE)
         {
-            PostQuitMessage(0);
+            //PostQuitMessage(0);
         }
         else if((int)wParam == VK_F2)
             Set4xMsaaState(!m4xMsaaState);
@@ -417,8 +417,10 @@ bool D3DApp::InitDirect3D()
 	// Enable the D3D12 debug layer.
 {
 	ComPtr<ID3D12Debug> debugController;
-	ThrowIfFailed(D3D12GetDebugInterface(IID_PPV_ARGS(&debugController)));
-	debugController->EnableDebugLayer();
+	//ThrowIfFailed(D3D12GetDebugInterface(IID_PPV_ARGS(&debugController)));
+	//debugController->EnableDebugLayer();
+
+	// I had to comment these two lines out ^^ not sure why.  
 }
 #endif
 
